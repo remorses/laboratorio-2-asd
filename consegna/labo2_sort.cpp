@@ -141,9 +141,40 @@ void mergeSort(vector<int>& v)
 				QUICKSORT CON SCELTA "BANALE" DEL PIVOT
 ***************************************************************************************/
 
+
+
+
+int partitionAux (vector<int>& v, int start, int end)
+{
+	int pivot = start;
+	int i = start+1;
+	for (int j=start+1; j<=end; ++j)
+        {
+		if (v[j] < v[start]) 
+		{
+			scambia(v, i, j);
+			++i;
+		}
+        }
+	scambia(v, start, i-1);
+	return i-1;
+	
+}
+
+void quickSortAux (vector<int>&v, int start, int end)
+{
+	if (start < end)
+	{
+		int pivotIndex = partitionAux (v, start, end);
+		quickSortAux(v, start, pivotIndex-1);
+		quickSortAux(v, pivotIndex+1, end); 
+	}
+}
 void quickSortTrivial(vector<int>& v)
 {
    /* Implementare quickSort banale con partizione in place */
+   quickSortAux(v, 0, v.size()-1);
+  
 }
 
 
