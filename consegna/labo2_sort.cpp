@@ -146,7 +146,7 @@ void mergeSort(vector<int>& v)
 
 int partitionAux (vector<int>& v, int start, int end)
 {
-	int pivot = start;
+	int pivotIndex = start;
 	int i = start+1;
 	for (int j=start+1; j<=end; ++j)
         {
@@ -184,7 +184,39 @@ void quickSortTrivial(vector<int>& v)
 				QUICKSORT RANDOMIZZATO
 ***************************************************************************************/
 
+
+int partitionAuxRand (vector<int>& v, int start, int end)
+{
+	int pivotIndex = start+rand()%(end-start+1); //range tra 0 e (end-start+1)?
+	scambia(v, pivotIndex, start);
+	int i = start+1;
+	for (int j=start+1; j<=end; ++j)
+        {
+		if (v[j] < v[start]) 
+		{
+			scambia(v, i, j);
+			++i;
+		}
+        }
+	scambia(v, start, i-1);
+	return i-1;
+	
+}
+
+void quickSortAuxRand (vector<int>&v, int start, int end)
+{
+	if (start < end)
+	{
+		int pivotIndex = partitionAuxRand (v, start, end);
+		quickSortAuxRand(v, start, pivotIndex-1);
+		quickSortAuxRand(v, pivotIndex+1, end); 
+	}
+}
 void quickSortRandom(vector<int>& v)
 {
-   /* Implementare quickSort randomizzato con partizione in place */
+   /* Implementare quickSort banale con partizione in place */
+   srand(3489563); 
+   quickSortAuxRand(v, 0, v.size()-1);
+  
 }
+
