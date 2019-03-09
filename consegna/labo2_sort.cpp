@@ -10,7 +10,7 @@ void scambia(vector<int>& v, int i, int j)
 
 
 /**************************************************************************************
-				SELECTION SORT
+                SELECTION SORT
 ***************************************************************************************/
 void selectionSort(vector<int>& v)
 {
@@ -29,7 +29,7 @@ void selectionSort(vector<int>& v)
 
 
 /**************************************************************************************
-				INSERTION SORT
+                INSERTION SORT
 ***************************************************************************************/
 void insertionSort(vector<int>& v)
 {
@@ -49,7 +49,7 @@ void insertionSort(vector<int>& v)
 
 
 /**************************************************************************************
-				BUBBLESORT
+                BUBBLESORT
 ***************************************************************************************/
 void bubbleSort(vector<int>& v)
 {
@@ -71,7 +71,7 @@ void bubbleSort(vector<int>& v)
 
 
 /**************************************************************************************
-				   MERGESORT
+                   MERGESORT
 ***************************************************************************************/
 void fondi(vector<int>& v, unsigned int inizio, unsigned int centro, unsigned int fine)
 {
@@ -138,7 +138,7 @@ void mergeSort(vector<int>& v)
 
 
 /**************************************************************************************
-				QUICKSORT CON SCELTA "BANALE" DEL PIVOT
+                QUICKSORT CON SCELTA "BANALE" DEL PIVOT
 ***************************************************************************************/
 
 
@@ -146,29 +146,29 @@ void mergeSort(vector<int>& v)
 
 int partitionAux (vector<int>& v, int start, int end)
 {
-	int pivotIndex = start;
-	int i = start+1;
-	for (int j=start+1; j<=end; ++j)
+    int pivotIndex = start;
+    int i = start+1;
+    for (int j=start+1; j<=end; ++j)
         {
-		if (v[j] < v[start]) 
-		{
-			scambia(v, i, j);
-			++i;
-		}
+        if (v[j] < v[start]) 
+        {
+            scambia(v, i, j);
+            ++i;
         }
-	scambia(v, start, i-1);
-	return i-1;
-	
+        }
+    scambia(v, start, i-1);
+    return i-1;
+    
 }
 
 void quickSortAux (vector<int>&v, int start, int end)
 {
-	if (start < end)
-	{
-		int pivotIndex = partitionAux (v, start, end);
-		quickSortAux(v, start, pivotIndex-1);
-		quickSortAux(v, pivotIndex+1, end); 
-	}
+    if (start < end)
+    {
+        int pivotIndex = partitionAux (v, start, end);
+        quickSortAux(v, start, pivotIndex-1);
+        quickSortAux(v, pivotIndex+1, end); 
+    }
 }
 void quickSortTrivial(vector<int>& v)
 {
@@ -181,36 +181,36 @@ void quickSortTrivial(vector<int>& v)
 
 
 /**************************************************************************************
-				QUICKSORT RANDOMIZZATO
+                QUICKSORT RANDOMIZZATO
 ***************************************************************************************/
 
 
 int partitionAuxRand (vector<int>& v, int start, int end)
 {
-	int pivotIndex = start+rand()%(end-start+1); //range tra 0 e (end-start+1)?
-	scambia(v, pivotIndex, start);
-	int i = start+1;
-	for (int j=start+1; j<=end; ++j)
+    int pivotIndex = start+rand()%(end-start+1); //range tra 0 e (end-start+1)?
+    scambia(v, pivotIndex, start);
+    int i = start+1;
+    for (int j=start+1; j<=end; ++j)
         {
-		if (v[j] < v[start]) 
-		{
-			scambia(v, i, j);
-			++i;
-		}
+        if (v[j] < v[start]) 
+        {
+            scambia(v, i, j);
+            ++i;
         }
-	scambia(v, start, i-1);
-	return i-1;
-	
+        }
+    scambia(v, start, i-1);
+    return i-1;
+    
 }
 
 void quickSortAuxRand (vector<int>&v, int start, int end)
 {
-	if (start < end)
-	{
-		int pivotIndex = partitionAuxRand (v, start, end);
-		quickSortAuxRand(v, start, pivotIndex-1);
-		quickSortAuxRand(v, pivotIndex+1, end); 
-	}
+    if (start < end)
+    {
+        int pivotIndex = partitionAuxRand (v, start, end);
+        quickSortAuxRand(v, start, pivotIndex-1);
+        quickSortAuxRand(v, pivotIndex+1, end); 
+    }
 }
 void quickSortRandom(vector<int>& v)
 {
