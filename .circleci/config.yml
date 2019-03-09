@@ -5,10 +5,7 @@ jobs:
       - image: gcc:latest
     steps:
       - checkout
-      - run: ls -1
-      - run: cd consegna
-      - run: ls -1
-      - run: g++ -Wall -std=c++11 labo2_main.cpp labo2_aux.cpp labo2_sort.cpp -o labo
+      - run: cd consegna && g++ -Wall -std=c++11 labo2_main.cpp labo2_aux.cpp labo2_sort.cpp -o labo
       - run: ./labo
 
 workflows:
