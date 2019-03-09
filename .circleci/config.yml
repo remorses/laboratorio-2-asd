@@ -1,4 +1,3 @@
-
 version: 2.0
 jobs:
   build_gcc_latest:
@@ -10,8 +9,8 @@ jobs:
       - run: g++ -Wall -std=c++11 labo2_main.cpp labo2_aux.cpp labo2_sort.cpp -o labo
       - run: ./labo
 
- workflows:
-  version: 2
-  build_and_test:
+workflows:
+version: 2
+build_and_test:
     jobs:
       - build_gcc_latest
