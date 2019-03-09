@@ -6,7 +6,7 @@ jobs:
     steps:
       - checkout
       - run: cd consegna && g++ -Wall -std=c++11 labo2_main.cpp labo2_aux.cpp labo2_sort.cpp -o labo
-      - run: ./labo
+      - run: cd consegna && ./labo
 
 workflows:
   version: 2
