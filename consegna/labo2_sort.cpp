@@ -212,10 +212,12 @@ void quickSortAuxRand (vector<int>&v, int start, int end)
         quickSortAuxRand(v, pivotIndex+1, end); 
     }
 }
+
+srand(777777777); 
+
 void quickSortRandom(vector<int>& v)
 {
    /* Implementare quickSort banale con partizione in place */
-   srand(3489563); 
    quickSortAuxRand(v, 0, v.size()-1);
   
 }
