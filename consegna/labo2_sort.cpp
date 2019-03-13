@@ -213,7 +213,7 @@ void quickSortAuxRand (vector<int>&v, int start, int end)
     }
 }
 
-srand(777777777); 
+srand(777); 
 
 void quickSortRandom(vector<int>& v)
 {
