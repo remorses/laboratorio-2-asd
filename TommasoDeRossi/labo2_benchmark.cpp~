@@ -1,3 +1,5 @@
+//Nome: Rodolfo, Tommaso, Diana	Cognome: Centanaro, De Rossi, Mukhanova	Matricola: 4719894, 4661724, 4633994		
+
 // compilare con il comando seguente:
 // g++ -Wall -std=c++11 labo2_main.cpp labo2_aux.cpp labo2_sort.cpp -o labo2
 
