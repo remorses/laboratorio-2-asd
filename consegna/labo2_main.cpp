@@ -15,7 +15,7 @@ using namespace std;
 using namespace std::chrono;
 
 
-int main()
+int mainn()
 {
 try {
     string nome_file;
